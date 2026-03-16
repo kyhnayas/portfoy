@@ -55,12 +55,13 @@ export default function HomePage() {
           {/* Sol — profil fotoğrafı */}
           <div className={styles.aboutPhoto}>
             <Image
-              src={p.profileImage || '/images/profile.jpg'}
+              src={p.profileImage || '/images/kayhan.png'}
               alt={`${p.name} - Art Direktör, 3D Tasarımcı, Sakarya`}
               fill
               priority
+              quality={85}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
               className={styles.aboutPhotoImg}
-              sizes="340px"
             />
           </div>
 
