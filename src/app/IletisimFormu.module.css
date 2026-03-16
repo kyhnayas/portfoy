@@ -18,7 +18,7 @@
 .alan {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 /* Etiket */
@@ -28,6 +28,7 @@
   color: var(--text-3);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  line-height: 1.4;
 }
 
 .zorunlu {
