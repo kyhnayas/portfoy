@@ -1,0 +1,215 @@
+/* İletişim Formu Stilleri */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 720px;
+}
+
+/* İki sütunlu satır */
+.satir {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.alan {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Etiket */
+.etiket {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.zorunlu {
+  color: var(--accent);
+}
+
+/* Girdi, select, textarea ortak */
+.girdi {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border-md);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.girdi::placeholder {
+  color: var(--text-3);
+}
+.girdi:focus {
+  border-color: var(--text);
+  background: rgba(0,0,0,0.02);
+}
+
+/* Select özel ok */
+.secim {
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%239a9590' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+.secim option {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Textarea */
+.metin {
+  resize: vertical;
+  min-height: 130px;
+  line-height: 1.65;
+}
+
+/* Hata mesajı */
+.hata {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  padding: 12px 16px;
+  border: 1px solid rgba(230, 48, 32, 0.25);
+  background: rgba(230, 48, 32, 0.04);
+}
+
+/* Alt satır: not + buton */
+.altSatir {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.zorunluNot {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+}
+
+/* Gönder butonu */
+.gonderBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.gonderBtn:hover:not(:disabled) {
+  opacity: 0.82;
+}
+.gonderBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.gonderBtn svg {
+  transition: transform 0.2s;
+}
+.gonderBtn:hover:not(:disabled) svg {
+  transform: translate(2px, -2px);
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid rgba(242, 240, 235, 0.3);
+  border-top-color: var(--bg);
+  border-radius: 50%;
+  animation: don 0.7s linear infinite;
+}
+@keyframes don {
+  to { transform: rotate(360deg); }
+}
+
+/* Başarı ekranı */
+.basarili {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 40px 48px;
+  border: 1px solid var(--border-md);
+  background: var(--card);
+  max-width: 480px;
+}
+
+.basariliIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--text);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.basariliBaslik {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.basariliAciklama {
+  font-size: 0.88rem;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+.tekrarBtn {
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tekrarBtn:hover {
+  color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .satir {
+    grid-template-columns: 1fr;
+  }
+  .basarili {
+    padding: 28px 20px;
+  }
+}
