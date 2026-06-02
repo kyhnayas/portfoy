@@ -45,6 +45,9 @@ export async function generateMetadata(): Promise<Metadata> {
       default: frontmatter.seoTitle || "Kayhan Ayas | Art Direktör & Tasarımcı",
       template: "%s | Kayhan Ayas",
     },
+    other: {
+      "google-adsense-account": "ca-pub-0088844737786444", // Kendi kodunuzu yazın
+    },
     description: frontmatter.seoDescription,
     keywords: frontmatter.seoKeywords,
     authors: [{ name: "Kayhan Ayas", url: "https://kayhanayas.com" }],
