@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { getMarkdownContent } from "@/lib/markdown";
+import { Analytics } from "@vercel/analytics/next";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -133,7 +134,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
